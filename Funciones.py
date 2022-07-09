@@ -13,3 +13,12 @@ def datosRegistro():
     estado = input("Ingrese estado ")
     personaje = (nombre,alias,tipo,estado)
     return personaje
+
+def datosLogin():
+    alias = input("Ingrese alias")
+    password = input("Ingrese su password")
+    datos = (alias,password)
+    return datos
+
+
+    
