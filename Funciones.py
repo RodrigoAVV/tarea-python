@@ -1,7 +1,7 @@
 def listarJugadores(jugadores):
     contador=1
     for jug in jugadores:
-        datos="{0}.ID: {1} | NOMBRE: {2} | ALIAS: {3} | TIPO: {4} | ESTADO: {5}"
+        datos="{0}.ID: {1}  |  NOMBRE: {2}  |  ALIAS: {3}  |  TIPO: {4}  |  ESTADO: {5}"
         print(datos.format(contador,jug[0],jug[1],jug[2],jug[3],jug[4]))
         contador +=1
     print(" ")
@@ -11,12 +11,16 @@ def datosRegistro():
     alias = input("Ingrese alias ")
     tipo = input("Ingrese tipo ")
     estado = input("Ingrese estado ")
-    personaje = (nombre,alias,tipo,estado)
+    password = input("Ingrese password")
+
+    
+
+    personaje = (nombre,alias,tipo,estado,encrypt(password))
     return personaje
 
 def datosLogin():
-    alias = input("Ingrese alias")
-    password = input("Ingrese su password")
+    alias = input("Ingrese alias ")
+    password = input("Ingrese su password ")
     datos = (alias,password)
     return datos
 

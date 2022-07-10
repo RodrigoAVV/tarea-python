@@ -1,3 +1,4 @@
+#Manual de instalacion y manual de usuario
 from pydoc import doc
 from turtle import clear
 from Database import Database
@@ -42,15 +43,22 @@ def ejecutarOpcion():
                 BD.actualizarJugador(jugador,id)
             
 def validarIngreso():
-    datos = Funciones.datosLogin()
     BD = Database()
-    data = BD.login(datos)
+    print("1 Iniciar sesión")
+    print("2 Registrarse")
+    opcion = int(input("Ingrese opción "))
+    if opcion == 1 :
+        datos = Funciones.datosLogin()
+        data = BD.login(datos)
 
-    if data is None:
-         print("Error")
-    elif len(data) > 0 :
-        ejecutarOpcion()
-
+        if data is None:
+            print("Error")
+        elif len(data) > 0 :
+            ejecutarOpcion()
+    elif  opcion == 2 :
+        jugadores = Funciones.datosRegistro()
+        BD.registrarJugador(jugadores)
+    
 validarIngreso()
 
 

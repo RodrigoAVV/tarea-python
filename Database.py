@@ -27,8 +27,8 @@ class Database:
     
     def registrarJugador(self,jugador):
         cursor = self.conn.cursor()
-        sql = "INSERT INTO JUGADORES (NOMBRE_J,ALIAS_J,TIPO,ESTADO) VALUES('{0}','{1}','{2}','{3}')"
-        cursor.execute(sql.format(jugador[0],jugador[1],jugador[2],jugador[3]))
+        sql = "INSERT INTO JUGADORES (NOMBRE_J,ALIAS_J,TIPO,ESTADO,PASSWORD) VALUES('{0}','{1}','{2}','{3}','{4}')"
+        cursor.execute(sql.format(jugador[0],jugador[1],jugador[2],jugador[3],jugador[4]))
         self.conn.commit()
         print("OK")
 
@@ -41,7 +41,7 @@ class Database:
 
     def actualizarJugador(self,jugador,id):
         cursor = self.conn.cursor()
-        sql = "UPDATE JUGADORES SET NOMBRE_J = '{0}', ALIAS_J = '{1}', TIPO = '{2}', ESTADO = '{3}' WHERE JUGADOR_ID = {4}"
-        cursor.execute(sql.format(jugador[0],jugador[1],jugador[2],jugador[3],id))
+        sql = "UPDATE JUGADORES SET NOMBRE_J = '{0}', ALIAS_J = '{1}', TIPO = '{2}', ESTADO = '{3}', PASSWORD = '{4}' WHERE JUGADOR_ID = {5}"
+        cursor.execute(sql.format(jugador[0],jugador[1],jugador[2],jugador[3],jugador[4],id))
         self.conn.commit()
         print("OK")
