@@ -10,7 +10,7 @@ def menu():
     print("1 Listar jugadores")
     print("2 Registrar jugador")
     print("3 Eliminar")
-    print("4 Actualizar")
+    print("4 Actualizar jugador")
     print("=====================")
     opcion = int(input("Ingrese opción "))
     return opcion
